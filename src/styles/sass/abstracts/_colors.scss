@@ -1,0 +1,46 @@
+$dark: hsl(203 90% 4);
+$light: hsl(159 100% 96);
+
+$variations: 5;
+
+$palette: (
+  dark: hsl(203 90% 4),
+  light: hsl(159 100% 96),
+);
+
+:root {
+  // dark - #010c13 iterations:5 strength:0.04 lighten:true
+  --dark-1: hsl(203, 90%, 4%);
+  --dark-2: hsl(203, 90%, 8%);
+  --dark-3: hsl(203, 90%, 12%);
+  --dark-4: hsl(203, 90%, 16%);
+  --dark-5: hsl(203, 90%, 20%);
+
+  // light - #ebfff8 iterations:5 strength:0.05 lighten:false
+  --light-1: hsl(159, 100%, 96%);
+  --light-2: hsl(159, 100%, 91%);
+  --light-3: hsl(159, 100%, 86%);
+  --light-4: hsl(159, 100%, 81%);
+  --light-5: hsl(159, 100%, 76%);
+
+  // blue - #0ac2ff iterations:5 strength:0.05 lighten:false
+  --blue-1: hsl(195, 100%, 52%);
+  --blue-2: hsl(195, 100%, 47%);
+  --blue-3: hsl(195, 100%, 42%);
+  --blue-4: hsl(195, 100%, 37%);
+  --blue-5: hsl(195, 100%, 32%);
+
+  // red - #a23c2a iterations:5 strength:0.05 lighten:true
+  --red-1: hsl(9, 59%, 40%);
+  --red-2: hsl(9, 59%, 45%);
+  --red-3: hsl(9, 59%, 50%);
+  --red-4: hsl(9, 59%, 55%);
+  --red-5: hsl(9, 59%, 60%);
+
+  // yellow - #fddd72 iterations:5 strength:0.05 lighten:false
+  --yellow-1: hsl(46, 97%, 72%);
+  --yellow-2: hsl(46, 97%, 67%);
+  --yellow-3: hsl(46, 97%, 62%);
+  --yellow-4: hsl(46, 97%, 57%);
+  --yellow-5: hsl(46, 97%, 52%);
+}
