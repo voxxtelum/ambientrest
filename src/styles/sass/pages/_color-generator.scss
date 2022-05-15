@@ -1,5 +1,8 @@
-.color-generator {
+body {
   background-color: var(--dark-1);
+}
+.color-generator {
+  //background-color: var(--dark-1);
   color: var(--light-1);
   min-height: 100vh;
 }
@@ -9,45 +12,42 @@
   text-align: left;
   font-size: 1.5rem;
   & h1 {
+    //background-color: var(--dark-1);
     margin-top: 2em;
-    padding: 0 1em;
-    border-radius: 2px;
-    background-image: linear-gradient(
-      90deg,
-      hsl(240deg 100% 20%) 0%,
-      hsl(269deg 100% 21%) 5%,
-      hsl(285deg 100% 21%) 10%,
-      hsl(298deg 100% 21%) 15%,
-      hsl(310deg 100% 25%) 20%,
-      hsl(318deg 100% 29%) 26%,
-      hsl(324deg 100% 32%) 33%,
-      hsl(329deg 100% 36%) 40%,
-      hsl(333deg 100% 39%) 48%,
-      hsl(336deg 100% 42%) 59%,
-      hsl(340deg 99% 45%) 69%,
-      hsl(351deg 86% 55%) 76%,
-      hsl(0deg 93% 61%) 80%,
-      hsl(9deg 100% 61%) 84%,
-      hsl(17deg 100% 59%) 86%,
-      hsl(24deg 100% 57%) 89%,
-      hsl(31deg 100% 54%) 91%,
-      hsl(38deg 100% 50%) 93%,
-      hsl(42deg 100% 50%) 95%,
-      hsl(47deg 100% 50%) 97%,
-      hsl(51deg 100% 50%) 98%,
-      hsl(55deg 100% 50%) 100%
-    );
+    // padding: 0 1em;
+    // border-radius: 2px;
+    // background-image: linear-gradient(
+    //   90deg,
+    //   hsl(240deg 100% 20%) 0%,
+    //   hsl(269deg 100% 21%) 5%,
+    //   hsl(285deg 100% 21%) 10%,
+    //   hsl(298deg 100% 21%) 15%,
+    //   hsl(310deg 100% 25%) 20%,
+    //   hsl(318deg 100% 29%) 26%,
+    //   hsl(324deg 100% 32%) 33%,
+    //   hsl(329deg 100% 36%) 40%,
+    //   hsl(333deg 100% 39%) 48%,
+    //   hsl(336deg 100% 42%) 59%,
+    //   hsl(340deg 99% 45%) 69%,
+    //   hsl(351deg 86% 55%) 76%,
+    //   hsl(0deg 93% 61%) 80%,
+    //   hsl(9deg 100% 61%) 84%,
+    //   hsl(17deg 100% 59%) 86%,
+    //   hsl(24deg 100% 57%) 89%,
+    //   hsl(31deg 100% 54%) 91%,
+    //   hsl(38deg 100% 50%) 93%,
+    //   hsl(42deg 100% 50%) 95%,
+    //   hsl(47deg 100% 50%) 97%,
+    //   hsl(51deg 100% 50%) 98%,
+    //   hsl(55deg 100% 50%) 100%
+    // );
   }
-}
-
-.color-generator {
 }
 
 .color-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Source Code Pro', monospace;
 }
 
 .color-form > button {
@@ -236,5 +236,44 @@
     -webkit-transform-origin: top;
     transform-origin: top;
     opacity: 1;
+  }
+}
+
+.gradient-border {
+  --border-width: 2px;
+  border-radius: var(--border-width);
+  background-color: var(--dark-1);
+  padding: 0 1em;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(
+      60deg,
+      hsl(224, 85%, 66%),
+      hsl(269, 85%, 66%),
+      hsl(314, 85%, 66%),
+      hsl(359, 85%, 66%),
+      hsl(44, 85%, 66%),
+      hsl(89, 85%, 66%),
+      hsl(134, 85%, 66%),
+      hsl(179, 85%, 66%)
+    );
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: calc(2 * var(--border-width));
+    animation: moveGradient 4s alternate infinite;
+  }
+}
+
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
   }
 }

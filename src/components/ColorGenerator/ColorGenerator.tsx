@@ -180,7 +180,7 @@ const ColorGenerator = () => {
 
   return (
     <>
-      <div className="color-generator">
+      <div className="color-generator ar-mono">
         <form className="color-form" autoComplete="off">
           <ColorGenHeader title="ColorGen" />
           <div className="color-form___input">
