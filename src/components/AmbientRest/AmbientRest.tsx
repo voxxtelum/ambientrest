@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import '../../styles/sass/components/_ar-home.scss';
+import ARButtonLink from '../ARButtonLink';
+
+import '../../styles/sass/pages/_ar-home.scss';
 
 const AmbientRest = () => {
   return (
@@ -16,13 +18,31 @@ const AmbientRest = () => {
             <section>
               <h2 className="ar-h2 ar-home-h2">FORWARD</h2>
               <nav className="ar-home___content-nav">
-                <Link className="ar-hover-border-1" to="/colorgen">
-                  colorGen
-                </Link>
-                <Link to="/colorgen">discovery</Link>
-                <Link to="/colorgen">voyager</Link>
-                <Link to="/colorgen">mariner</Link>
-                <Link to="/colorgen">passage</Link>
+                <ARButtonLink
+                  buttonClass="ar-btn hover-slide-right"
+                  href="/colorgen"
+                  displayText="discovery"
+                />
+                <ARButtonLink
+                  buttonClass="ar-btn hover-slide-right"
+                  href="/colorgen"
+                  displayText="voyager"
+                />
+                <ARButtonLink
+                  buttonClass="ar-btn hover-slide-right"
+                  href="/colorgen"
+                  displayText="mariner"
+                />
+                <ARButtonLink
+                  buttonClass="ar-btn hover-slide-right"
+                  href="/colorgen"
+                  displayText="passage"
+                />
+                <ARButtonLink
+                  buttonClass="ar-btn hover-slide-right"
+                  href="/colorgen"
+                  displayText="origin"
+                />
               </nav>
             </section>
           </div>

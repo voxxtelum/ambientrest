@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
-import '../../styles/sass/components/_color-generator.scss';
+import '../../styles/sass/pages/_color-generator.scss';
 
 import ColorGenHeader from '../ColorGenHeader';
 
