@@ -1,0 +1,27 @@
+/* 13. hover-border-3 */
+.ar-hover-border-1::before,
+.ar-hover-border-1::after {
+  width: 0%;
+  height: 0%;
+  opacity: 0;
+  transition: width 0.2s 0.15s linear, height 0.15s linear, opacity 0s 0.35s;
+}
+.ar-hover-border-1::before {
+  top: 0;
+  right: 0;
+  border-top: 1px solid rgb(28, 31, 30);
+  border-left: 1px solid rgb(28, 31, 30);
+}
+.ar-hover-border-1::after {
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid rgb(28, 31, 30);
+  border-right: 1px solid rgb(28, 31, 30);
+}
+.ar-hover-border-1:hover::before,
+.ar-hover-border-1:hover::after {
+  width: 100%;
+  height: 99%;
+  opacity: 1;
+  transition: width 0.2s linear, height 0.15s 0.2s linear, opacity 0s;
+}

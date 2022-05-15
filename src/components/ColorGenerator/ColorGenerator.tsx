@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
+import '../../styles/sass/components/_color-generator.scss';
+
 import ColorGenHeader from '../ColorGenHeader';
 
-import { Colord, colord, getFormat } from 'colord';
+import { Colord, colord, getFormat, random } from 'colord';
 import { Format } from 'colord/types';
 
 const ColorGenerator = () => {
@@ -150,9 +152,15 @@ const ColorGenerator = () => {
   };
 
   const addNewColor = () => {
+    let newColor = random().toHex();
     let newFormValues = [
       ...formValues,
-      { colorHex: '#', colorName: '', colorIterations: 5, colorStrength: 0.05 },
+      {
+        colorHex: newColor,
+        colorName: '',
+        colorIterations: 5,
+        colorStrength: 0.05,
+      },
     ];
     setFormValues(newFormValues);
     const colorSchemeOutput = generateColorSchemeOutput(newFormValues);
@@ -180,13 +188,13 @@ const ColorGenerator = () => {
               <div className="color-form___inline swing-in-top-fwd" key={index}>
                 <div className="color-form___cell">
                   <input
-                    type="text"
+                    type="color"
                     name="colorHex"
                     value={element.colorHex || ''}
                     onChange={(e) => handleChange(index, e)}
                     size={12}
                   ></input>
-                  <label htmlFor="colorHex">Hex Value</label>
+                  <label htmlFor="colorHex">Color</label>
                 </div>
                 <div className="color-form___cell">
                   <input
@@ -196,7 +204,7 @@ const ColorGenerator = () => {
                     onChange={(e) => handleChange(index, e)}
                     size={16}
                   ></input>
-                  <label htmlFor="colorName">Color Name</label>
+                  <label htmlFor="colorName">Name</label>
                 </div>
                 <div className="color-form___cell">
                   <input
