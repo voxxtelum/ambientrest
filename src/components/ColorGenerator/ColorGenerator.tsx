@@ -185,7 +185,11 @@ const ColorGenerator = () => {
           <ColorGenHeader title="ColorGen" />
           <div className="color-form___input">
             {formValues.map((element, index) => (
-              <div className="color-form___inline swing-in-top-fwd" key={index}>
+              <div
+                className="color-form___inline swing-in-top-fwd"
+                key={index}
+                role={'row'}
+              >
                 <div className="color-form___cell">
                   <input
                     type="color"
